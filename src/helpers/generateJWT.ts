@@ -4,7 +4,7 @@ import dotenv from 'dotenv';
 dotenv.config({path: 'variables.env'});
 
 const createJWT = (user:IUser) => {
-    return jwt.sign({ id:user._id, email: user.email, name: user.username }, <string>process.env.JWT_SECRET, {
+    return jwt.sign({ _id:user._id, email: user.email, username: user.username }, <string>process.env.JWT_SECRET, {
         expiresIn: '24h'
     });
 }
